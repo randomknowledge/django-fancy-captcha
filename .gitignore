@@ -1,0 +1,34 @@
+# File types #
+##############
+*.pyc
+*.swo
+*.swp
+*.swn
+*.log
+*.pot
+*.egg
+*.egg-info
+
+# Directories #
+###############
+.idea/
+virtualenv/
+.sass-cache/
+.tox/
+/data/
+/media/
+/static/
+/build/
+/dist/
+
+# Files #
+#########
+database.db
+settings_local.py
+
+# OS generated files #
+######################
+.DS_Store?
+ehthumbs.db
+Thumbs.db
+*~

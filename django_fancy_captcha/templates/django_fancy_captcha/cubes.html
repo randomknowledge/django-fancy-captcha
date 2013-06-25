@@ -1,0 +1,14 @@
+{% load fancycaptcha_tags static %}
+<div class="cube3d-container" data-for="{{ id }}">
+    {% for i in count|times %}
+    <div class="cube3d">
+        <div class="side">{% fancycaptcha_image session i 0 count %}</div>
+        <div class="side"></div>
+        <div class="side">{% fancycaptcha_image session i 1 count %}</div>
+        <div class="side"></div>
+        <div class="side">{% fancycaptcha_image session i 2 count %}</div>
+        <div class="side">{% fancycaptcha_image session i 3 count %}</div>
+    </div>
+    {% endfor %}
+    <span class="clearfix"></span>
+</div>

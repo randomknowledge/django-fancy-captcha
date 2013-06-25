@@ -1,0 +1,47 @@
+{% load static i18n compress fancycaptcha_tags %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    {% block header %}
+        <title>{% block title %}{% endblock %}</title>
+    {% endblock %}
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width"/>
+
+    {% compress css %}
+        {% block css %}
+            <link type="text/x-sass" rel="stylesheet" href="{% static 'example/sass/normalize.sass' %}">
+            {% fancycaptcha_css %}
+        {% endblock %}
+    {% endcompress %}
+
+    {% compress js %}
+        {% block header-js %}
+            <script src="{% static 'example/js/vendor/modernizr.min.js' %}"></script>
+        {% endblock %}
+    {% endcompress %}
+</head>
+<body class="{% block bodyclass %}{% endblock %}">
+{% block body-outer %}
+    {% block content %}{% endblock %}
+    {% block scripts %}
+        {% compress js %}
+            {% block js %}
+                <script src="{% static 'example/js/vendor/jquery.min.js' %}" type="text/javascript" charset="utf-8"></script>
+                <script type="text/javascript" src="{% static 'django_fancy_captcha/js/fancycaptcha.js' %}"></script>
+            {% endblock %}
+        {% endcompress %}
+    {% endblock %}
+{% endblock %}
+</body>
+</html>
