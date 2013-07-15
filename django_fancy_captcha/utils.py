@@ -44,7 +44,7 @@ def _generate_session_images(session, all_images, num_cubes, force=False):
         if not session_data[cubes_key][i] or force:
             changed = True
             images = list(all_images)
-            images = random.sample(images, num_cubes - 1)
+            images = random.sample(images, 3)
             images.append(settings.FANCY_CAPTCHA_CORRECT_IMAGE)
             random.shuffle(images)
             session_data[cubes_key][i] = images
