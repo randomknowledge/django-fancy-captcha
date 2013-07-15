@@ -61,4 +61,5 @@ class Cube
       obj.css("-#{prefix}-#{prop}", val)
 
 $ ->
-  new Cubes $('.cube3d-container')
+  if $('.cube3d-container').length
+    new Cubes $('.cube3d-container')

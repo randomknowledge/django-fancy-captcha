@@ -118,7 +118,9 @@
   })();
 
   $(function() {
-    return new Cubes($('.cube3d-container'));
+    if ($('.cube3d-container').length) {
+      return new Cubes($('.cube3d-container'));
+    }
   });
 
 }).call(this);
