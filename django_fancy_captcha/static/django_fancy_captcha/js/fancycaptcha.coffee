@@ -2,9 +2,10 @@ class @Cubes
   constructor: (selector) ->
     @selector = selector
     field_id = '#' + @selector.data 'for'
-    @field = $(field_id)
-    @cubes = []
-    @start()
+    if field_id
+      @field = $(field_id)
+      @cubes = []
+      @start()
 
   start: =>
     @value = []
